@@ -9,7 +9,7 @@ from web.httpserver import StaticMiddleware
 import bitmath
 
 
-rec_path = "recordings/"
+waves_path = "waves/"
 
 def get_contents(file):
     file = open('static/' + file, mode='r')
@@ -21,8 +21,13 @@ def get_size(bytes, precision):
     return str(bitmath.Byte(bytes).best_prefix(system=bitmath.SI).format("{value:." + str(precision) + "f} {unit}"))
 
 def get_sessions():
+
+    # return early if doesnt exist yet
+    if not os.path.exists(waves_path):
+        return []
+
     # grab directories
-    sessions = next(os.walk(rec_path))[1]
+    sessions = next(os.walk(waves_path))[1]
 
     # filter out hidden directories
     sessions = filter(lambda x: not x.startswith("."), sessions)
@@ -32,17 +37,17 @@ def get_sessions():
 
     return sessions
 
-def get_recordings(path):
+def get_waves(path):
     # grab files
-    recordings = next(os.walk(path))[2]
+    waves = next(os.walk(path))[2]
 
     # filter out hidden files
-    recordings = filter(lambda x: not x.startswith("."), recordings)
+    waves = filter(lambda x: not x.startswith("."), waves)
 
     # sort files
-    recordings = sorted(recordings)
+    waves = sorted(waves)
 
-    return recordings
+    return waves
 
 def get_session_size(path):
     nbytes = sum(d.stat().st_size for d in os.scandir(path) if d.is_file())
@@ -56,10 +61,8 @@ def get_session_time(path):
 
 def delete_path(path):
     path = path.strip("./")
-
-    if not path.startswith(rec_path):
+    if not path.startswith(waves_path):
         return
-
     if not os.path.exists(path):
         return 
 
@@ -74,7 +77,12 @@ def delete_path(path):
             shutil.rmtree(dirname)
 
 def get_disk_usage():
-    info = shutil.disk_usage(rec_path)
+
+    path = waves_path
+    if not os.path.exists(path):
+        path = "."
+
+    info = shutil.disk_usage(path)
     myinfo = {
       "free": get_size(info.free, 0),
       "used": get_size(info.total - info.free, 0),
@@ -93,12 +101,12 @@ def create_and_stream_zip(session_path):
         zf = zipstream.ZipFile(mode='w', compression=zipstream.ZIP_DEFLATED)
 
         # add empty session folder to zip
-        zf.write(rec_path + session_path + "/", arcname=zip_folder_name + "/")
+        zf.write(waves_path + session_path + "/", arcname=zip_folder_name + "/")
 
-        # iterate recording files in session
-        for recording in get_recordings(rec_path + session_path):
+        # iterate wave files in session
+        for wave in get_waves(waves_path + session_path):
             # write bytes to stream
-            zf.write(rec_path + session_path + "/" + recording, arcname=zip_folder_name + "/" + recording)
+            zf.write(waves_path + session_path + "/" + wave, arcname=zip_folder_name + "/" + wave)
 
         # iterate all bytes of all files and yield back
         for chunk in zf:
@@ -117,26 +125,26 @@ def html():
 
     index_html = get_contents('index.html')
     session_html = get_contents('session.html')
-    recordings_html = get_contents('recording.html')
+    waves_html = get_contents('wave.html')
 
     all_sessions_html = ""
     sessions = get_sessions()
     for session_path in sessions:
-        all_recordings_html = ""
-        recordings = get_recordings(rec_path + session_path)
-        size = get_session_size(rec_path+session_path)
-        date = str(get_session_date(rec_path+session_path))
-        time = str(get_session_time(rec_path+session_path))
+        all_waves_html = ""
+        waves = get_waves(waves_path + session_path)
+        size = get_session_size(waves_path+session_path)
+        date = str(get_session_date(waves_path+session_path))
+        time = str(get_session_time(waves_path+session_path))
 
-        for filename in recordings:
-            all_recordings_html += recordings_html \
+        for filename in waves:
+            all_waves_html += waves_html \
                 .replace("{filename}", filename) \
-                .replace("{filepath}", rec_path + session_path + "/" + filename)
+                .replace("{filepath}", waves_path + session_path + "/" + filename)
 
         all_sessions_html += session_html \
             .replace("{session_path}", session_path) \
             .replace("{zip_path}", "zip/" + session_path) \
-            .replace("{recordings}", all_recordings_html) \
+            .replace("{waves}", all_waves_html) \
             .replace("{size}", size).replace("{date}", date) \
             .replace("{time}", time)
 
@@ -172,10 +180,10 @@ class zip:
     def GET(self, session_path):
         return create_and_stream_zip(session_path)
 
-class AddStaticMiddlewareRecordings(StaticMiddleware):
-    def __init__(self, app, prefix="/" + rec_path):
+class AddStaticMiddlewareWaves(StaticMiddleware):
+    def __init__(self, app, prefix="/" + waves_path):
         StaticMiddleware.__init__(self, app, prefix)
 
 if __name__ == "__main__":
     app = web.application(urls, globals())
-    app.run(AddStaticMiddlewareRecordings)
+    app.run(AddStaticMiddlewareWaves)

@@ -28,7 +28,7 @@ channels = 8
 #
 # initialize folder variables
 #
-rec_path = "recordings/"
+waves_path = "waves/"
 sess_path = ""
 session_id = 1
 rec_counter = 1
@@ -49,20 +49,20 @@ midi_monitor = False
 
 
 #
-# Make sure recordings/ folder exists
+# Make sure waves/ folder exists
 #
-def ensure_recordings_folder():
-    Path(rec_path).mkdir(parents=True, exist_ok=True)
+def ensure_waves_folder():
+    Path(waves_path).mkdir(parents=True, exist_ok=True)
 
 #
-# Create recordings/001 ... folder every time the script is started,
+# Create waves/001/ ... folder every time the script is started,
 # reuse last folder if it is still empty
 #
 def create_session_folder():
-    global sess_path, rec_path, session_id
+    global sess_path, waves_path, session_id
 
     # read only directories (sessions folders)
-    sessions = next(os.walk(rec_path))[1]
+    sessions = next(os.walk(waves_path))[1]
 
     # filter out hidden directories
     sessions = filter(lambda x: not x.startswith("."), sessions)
@@ -79,7 +79,7 @@ def create_session_folder():
         last_session = int(sessions[-1])
 
         # retrieve contents to check for emptyness
-        last_session_contents = os.listdir(rec_path + sessions[-1])
+        last_session_contents = os.listdir(waves_path + sessions[-1])
 
 
     # reuse last session folder if it was empty
@@ -93,7 +93,7 @@ def create_session_folder():
     session_id = f'{session_id:03}'
 
     # save session path
-    sess_path = rec_path + session_id + "/"
+    sess_path = waves_path + session_id + "/"
 
     print ("Current session directory: ")
     print ("- " + sess_path + "\n")
@@ -311,7 +311,7 @@ try:
 
     print_midi_devices()
     print_soundcards()
-    ensure_recordings_folder()
+    ensure_waves_folder()
     create_session_folder()
 
     while True:
