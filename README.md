@@ -68,7 +68,7 @@ python3 server.py
 
 ## How to take care of alsa warnings?
 
-To get rid of alsa warnings, use nano to edit this config file:
+To get rid of alsa warnings, edit this config file:
 `sudo nano /usr/share/alsa/alsa.conf`
 
 Comment out these sections as such:
@@ -104,7 +104,7 @@ pcm.dmix cards.pcm.dmix
 
 # MIT License
 
-Copyright (c) 2021 Karl
+Copyright (c) 2021 Karl Pannek
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
