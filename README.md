@@ -23,12 +23,50 @@ Web interface features:
 - listen back to recordings
 - delete recordings and sessions
 
-# How to install on Raspberry Pi 3 and above?
+# Installation and execution
+
+## Installing on Raspberry Pi 3 and above
 
 Run installation script:
 `sh install.sh`
 
-# How to take care of alsa warnings?
+## Configure the recorder 
+
+Edit `recorder.py` and configure to your needs. 
+Note that if you just run `python3 recorder.py`, it will print out all connected MIDI and audio devices to help you with the configuration. By the way, it is enough to just use a part of the printed name for referencing a device.
+
+Example config:
+```
+#
+# initialize midi
+#
+midi_portname = "K-Mix Control Surface"
+note_rec_button = 84
+
+#
+# initialize soundcard 
+#
+soundcard_name = "K-Mix"
+channels = 8
+```
+
+## Running wavedeck recorder
+
+The recorder will listen to MIDI notes and start / stop the audio recording.
+
+To start the recorder run 
+```
+python3 recorder.py
+```
+
+## Running wavedeck web interface
+
+To enable the web interface you need to start the server script
+```
+python3 server.py
+```
+
+## How to take care of alsa warnings?
 
 To get rid of alsa warnings, use nano to edit this config file:
 `sudo nano /usr/share/alsa/alsa.conf`
