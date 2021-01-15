@@ -9,7 +9,7 @@ Connect a multi-channel audio interface and a MIDI device via USB to a Raspberry
 ![wavedeck-diagram](https://user-images.githubusercontent.com/692826/104786417-8bac4a80-5795-11eb-9c7a-b68e2ef0fb5a.png)
 
 
-Note that in this setup the audio setup is a Keith McMillen K-Mix, which has a MIDI mode and a "record" button.
+Note that in this setup the audio interface is a Keith McMillen K-Mix, which has a MIDI mode and a "record" button.
 
 # Web interface of wavedeck
 
