@@ -1,0 +1,30 @@
+1610396865747	geckodriver	INFO	Listening on 127.0.0.1:65055
+1610396866767	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/nv/_zjv6z454mb1cctzxn96bd0r0000gq/T/rust_mozprofile339gew"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1610396869532	Marionette	INFO	Listening on port 65066
+1610396869573	Marionette	WARN	TLS certificate errors will be ignored for this session
+1610396882694	Marionette	INFO	Stopped listening on port 65066
+1610406102662	geckodriver	INFO	Listening on 127.0.0.1:50580
+1610406102669	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/nv/_zjv6z454mb1cctzxn96bd0r0000gq/T/rust_mozprofileMEILs7"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1610406106744	Marionette	INFO	Listening on port 50589
+1610406106832	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://formular.berlin.de/xima-forms-29/formdir/14963116144270000/client_script_1496311611103.js, line 2248: unreachable code after return statement
+JavaScript warning: https://formular.berlin.de/xima-forms-29/formdir/14963116144270000/client_script_1496311611103.js, line 2248: unreachable code after return statement
+JavaScript warning: https://formular.berlin.de/xima-forms-29/formdir/14963116144270000/client_script_1496311611103.js, line 2248: unreachable code after return statement
+JavaScript warning: https://formular.berlin.de/xima-forms-29/formdir/14963116144270000/client_script_1496311611103.js, line 2248: unreachable code after return statement
+JavaScript warning: https://formular.berlin.de/xima-forms-29/formdir/14963116144270000/client_script_1496311611103.js, line 2248: unreachable code after return statement
+JavaScript warning: https://formular.berlin.de/xima-forms-29/formdir/14963116144270000/client_script_1496311611103.js, line 2248: unreachable code after return statement
+1610406129707	Marionette	INFO	Stopped listening on port 50589
+1610406138256	geckodriver	INFO	Listening on 127.0.0.1:50807
+1610406138271	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/nv/_zjv6z454mb1cctzxn96bd0r0000gq/T/rust_mozprofilePtAPL5"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1610406140760	Marionette	INFO	Listening on port 50816
+1610406140872	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://formular.berlin.de/xima-forms-29/formdir/14963116144270000/client_script_1496311611103.js, line 2248: unreachable code after return statement
+JavaScript warning: https://formular.berlin.de/xima-forms-29/formdir/14963116144270000/client_script_1496311611103.js, line 2248: unreachable code after return statement
+JavaScript warning: https://formular.berlin.de/xima-forms-29/formdir/14963116144270000/client_script_1496311611103.js, line 2248: unreachable code after return statement
+JavaScript warning: https://formular.berlin.de/xima-forms-29/formdir/14963116144270000/client_script_1496311611103.js, line 2248: unreachable code after return statement
+JavaScript warning: https://formular.berlin.de/xima-forms-29/formdir/14963116144270000/client_script_1496311611103.js, line 2248: unreachable code after return statement
+JavaScript warning: https://formular.berlin.de/xima-forms-29/formdir/14963116144270000/client_script_1496311611103.js, line 2248: unreachable code after return statement
+1610406163937	Marionette	INFO	Stopped listening on port 50816

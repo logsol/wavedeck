@@ -1,0 +1,19 @@
+<div class="session">
+  <div class="session-header">
+    <div class="right">
+      <span class="session-delete"><a onclick="delete_session('{session_path}');">🔥 Delete</a></span>
+      <span class="session-zip"><a href="{zip_path}" o="zip_session('{session_path}', this);"">📦 ZIP</a></span>
+    </div>
+    <p>
+      <span class="session-title"> Session {session_path} </span>
+    </p>
+    <p class="session-meta">
+      <span>{size}</span>
+      <span>{date}</span>
+      <span>{time}</span>
+    </p>
+  </div>
+  <table>
+  {recordings}
+  </table>
+</div>
