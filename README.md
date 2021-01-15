@@ -28,25 +28,6 @@ Web interface features:
 Run installation script:
 `sh install.sh`
 
-Take care of alsa warnings
-
-# How to install on chip
-
-Fore reference visit https://medium.com/@0x1231/nextthingco-pocket-c-h-i-p-flashing-guide-3445492639e
-
-Copy these sources into `/etc/apt/sources.list`
-
-`sudo apt-get install software-properties-common`
-
-Then install pythoon3
-`sudo apt install python3-pip`
-
-Run installation script:
-`sh install.sh`
-
-Note that I could not really get this to work on CHIP, which
-is why I decided to move to Raspberry Pi instead.
-
 # How to take care of alsa warnings?
 
 To get rid of alsa warnings, use nano to edit this config file:
