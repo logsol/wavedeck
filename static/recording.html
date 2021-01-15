@@ -1,0 +1,14 @@
+<tr>
+  <td>
+  	<a href="{filepath}">{filename}</a>
+  </td>
+  <td class="play">
+  	<audio controls preload="none">
+	  <source src="{filepath}" type="audio/wav">
+	  Your browser does not support the audio tag.
+	</audio>
+  </td>
+  <td class="delete-recording">
+  	<a onclick="delete_recording('{filename}', '{filepath}');">Delete</a>
+  </td>
+</tr>

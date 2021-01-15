@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Recorded Files</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        wavedeck
+      </h1>
+
+      <div class="disk-usage session-header">
+        <span class="session-title"> Disk Usage </span>
+        <p class="session-meta"> 
+          <span>Total: {total}</span>
+          <span>Used: {percent_used}</span>
+          <span>Free: {percent_free}</span>
+        </p>
+        <div class="disk-bar">
+          <div class="disk-bar-free" style="width: {percent_free}">{free} free</div>
+          <div class="disk-bar-used" style="width: {percent_used}">{used} used</div>
+        </div>
+      </div>
+      {sessions}
+    </div>
+  </body>
+</html>

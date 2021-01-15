@@ -1,0 +1,131 @@
+body {
+  background-color: #2a363b;
+  font-family: 'Trebuchet MS';
+  font-size: 22px;
+}
+h1 {
+  text-align: right;
+  font-size: 69px;
+  margin: 0;
+  padding: 0;
+  line-height: 75px;
+  color: #292c33d9;
+  font-family: sans-serif;
+  font-style: italic;
+}
+table {
+  width: 100%;
+  background-color: #eee;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td, th {
+  border: 1px solid #ccc;
+  padding: 3px;
+  text-align: center;
+}
+a {
+  color: #d84a5f;
+}
+table a {
+  padding: 10px 0;
+  display: block;
+}
+
+
+.container {
+  max-width: 800px; 
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #7b7975;
+}
+.session {
+  margin-bottom: 30px;
+}
+.session-header {
+  background: #292c33d9;
+  color: #bbb;
+  padding: 20px;
+}
+.session-header p {
+  padding: 0;
+  margin: 0;
+}
+.session-header .session-meta {
+  font-size: 0.6em;
+  opacity: 0.6;
+  width: 70%;
+}
+.session-meta span {
+  margin-right: 2em;
+}
+.session-header a {
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.session-header .right {
+	float: right;
+}
+.session-header .session-zip a {
+  background-color: #099ce0;
+  color: #222244;
+}
+.session-header .session-delete a {
+  background-color: #ca374c;
+  color: #331111;
+}
+.disk-usage {
+	margin-bottom: 20px;
+}
+.disk-bar {
+	margin-top: 10px;
+	border: 1px solid #2a363b;
+}
+.disk-bar div {
+	text-align: center;
+	padding: 5px 0;
+	display: block;
+	overflow: hidden;
+	height: 1em;
+}
+.disk-bar-used {
+	background-color: #d84a5f;
+	color: #772222;
+}
+.disk-bar-free {
+	float: right;
+	background-color: #54a851;
+	color: #224422;
+}
+.delete-recording a,
+.session-zip a,
+.session-delete a {
+	cursor: pointer;
+}
+.delete-recording a {
+	text-decoration: underline;
+}
+
+/** 
+ * Mobile
+ */
+body.mobile {
+  font-size: 2em;
+}
+.mobile #container {
+  width: 100%;
+  max-width: none;
+}
+.mobile .session-header .session-title {
+  
+}
+.mobile a {
+  margin: 20px 0;
+}
+.mobile .play {
+  display: none;
+}
+.mobile .session-header {
+  padding: 30px;
+}	
