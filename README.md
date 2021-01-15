@@ -1,3 +1,28 @@
+# What is wavedeck?
+
+Wavedeck turns a Raspberry Pi into a portable multi-track recording device. 
+
+Connect a multi-channel audio interface and a MIDI device via USB to a Raspberry Pi (or similar) to start recording your band or dawless jams. Send a MIDI note to toggle the recording mode. This will record multi-channel wave files onto your SD card. Some audio interfaces even have integrated MIDI functionality, which eliminates the need for a separate MIDI device. The current recording toggle state is indicated back to the device to light up a status LED.
+
+# Example setup diagram
+
+![wavedeck-diagram](https://user-images.githubusercontent.com/692826/104786417-8bac4a80-5795-11eb-9c7a-b68e2ef0fb5a.png)
+
+
+Note that in this setup the audio setup is a Keith McMillen K-Mix, which has a MIDI mode and a "record" button.
+
+# Web interface of wavedeck
+
+You can easily access and download audio files through a built-in web interface directly from a phone or computer. Use the LAN port of your Raspberry Pi or configure its built-in wifi module to connect. Once you are in the same network you should be able to surf to http://raspberry.local.
+
+![wavedeck-web-interface](https://user-images.githubusercontent.com/692826/104780426-77625080-5789-11eb-8891-54cbfe9e81c6.png)
+
+Web interface features:
+- display available storage space
+- just-in-time zipping and downloading sessions 
+- listen back to recordings
+- delete recordings and sessions
+
 # How to install on Raspberry Pi 3 and above?
 
 Run installation script:
