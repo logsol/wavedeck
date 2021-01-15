@@ -2,7 +2,7 @@
 
 Wavedeck turns a Raspberry Pi into a portable multi-track recording device. 
 
-Connect a multi-channel audio interface and a MIDI device via USB to a Raspberry Pi (or similar) to start recording your band or dawless jams. Send a MIDI note to toggle the recording mode. This will record multi-channel wave files onto your SD card. Some audio interfaces even have integrated MIDI functionality, which eliminates the need for a separate MIDI device. The current recording toggle state is indicated back to the device to light up a status LED.
+Connect a multi-channel audio interface and a MIDI device via USB to a Raspberry Pi (or similar) to start recording your band or dawless jams. Send a MIDI note to toggle the recording mode. This will record multi-channel wave files onto your SD card. Some audio interfaces even have integrated MIDI functionality, which eliminates the need for a separate MIDI device. The current recording toggle state is indicated back to the MIDI device to light up a status LED.
 
 # Example setup diagram
 
